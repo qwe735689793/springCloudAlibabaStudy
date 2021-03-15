@@ -1,0 +1,17 @@
+nacos:
+  config:
+    server-addr: 47.98.250.133:8848
+    group: DEFAULT_GROUP
+    bootstrap:
+      enable: true
+    type: Properties
+    username: nacos
+    password: nacos
+    remote-first: true
+    data-ids: ${spring.application.name}-${spring.profiles.active}-${application.version}
+    namespace: cloud-alibaba-study
+#logging:
+#  file:
+#    path: D:/skshulog/client-for-shuapp/logs
+#  level:
+#    root: info
