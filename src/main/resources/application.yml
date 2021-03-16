@@ -7,6 +7,8 @@ spring:
     name: ${application.name}
   profiles:
     active: dev  #dev和test都是对应nacos上的${spring.application.name}-dev-${application.version}上，
+
+
 #logging:
 #  config: classpath:logback-setting.xml
 #mybatis-plus:

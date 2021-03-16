@@ -4,8 +4,8 @@ nacos:
     group: DEFAULT_GROUP
     bootstrap:
       enable: true
-    type: Properties
-    username: nacos
+    type: yaml
+    username: nacos1
     password: nacos
     remote-first: true
     data-ids: ${spring.application.name}-${spring.profiles.active}-${application.version}
