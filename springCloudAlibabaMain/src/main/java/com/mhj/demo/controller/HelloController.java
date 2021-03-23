@@ -73,41 +73,6 @@ public class HelloController {
         log.error("日志输出 error");
         return new ResultVO();
     }
-    /*
-    * 短信服务测试
-    * */
-    @RequestMapping(value = "messageTest",method = RequestMethod.POST)
-    public ResultVO messageTest(){
-        //连接阿里云 使用对用的id 和密码  忘记了重置
-        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou",
-                "LTAI4G9MGEKoytCe8zC3MNUT",
-                "Ufqn9deafUddTm8pbntkYSJhZIP062");
-        //构建请求
-        IAcsClient client = new DefaultAcsClient(profile);
-        CommonRequest request = new CommonRequest();
-        request.setSysMethod(MethodType.POST);
-        request.setSysDomain("dysmsapi.aliyuncs.com");
-        request.setSysVersion("2017-05-25");
-        request.setSysAction("SendSms");
-        //参数  手机号码  验证码 使用的模板签名
-
-        request.putQueryParameter("PhoneNumbers", "18059882212");    //给什么手机号发送
-        request.putQueryParameter("SignName", "小缪学java");       //选择什么签名
-        request.putQueryParameter("TemplateCode", "SMS_203186696"); //模板
-        //验证码
-        HashMap<String,Object> map =new HashMap<>();
-        map.put("code",1234);
-        request.putQueryParameter("TemplateParam", JSON.toJSONString(map));//必须要是字符串
-        try {
-            CommonResponse response = client.getCommonResponse(request);
-            System.out.println(response.getData());
-        } catch (ServerException e) {
-            e.printStackTrace();
-        } catch (ClientException e) {
-            e.printStackTrace();
-        }
-        return new ResultVO(200,"短信测是","成功");
-    }
     @Autowired
     private PlusTest plusTest;
     /**

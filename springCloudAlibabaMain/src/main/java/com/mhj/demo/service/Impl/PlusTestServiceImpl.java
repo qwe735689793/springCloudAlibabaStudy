@@ -15,7 +15,6 @@ import java.util.Map;
  */
 @Service
 public class PlusTestServiceImpl extends ServiceImpl<PlusTest, Answer> implements PlusTestService {
-
     public void test(Answer answer){
         baseMapper.updateById(answer);
     }
