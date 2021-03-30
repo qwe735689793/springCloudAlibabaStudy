@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>springCloudAlibabaMain</module>
+        <module>springCloudSMS</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
